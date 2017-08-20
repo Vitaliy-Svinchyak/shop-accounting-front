@@ -1,0 +1,62 @@
+<md-card class="user-characteristics">
+  <div class="characteristicBlock">
+    <span class="characteristicIcon">
+      <img src="/assets/icons/strength2.svg" alt="Сила">
+    </span>
+    <md-progress-bar class="user-characteristic-progress-bar"
+                     [mode]="'determinate'"
+                     [value]="getPercent(characteristics?.strength)">
+    </md-progress-bar>
+    <span class="user-characteristic-number">
+      {{characteristics?.strength}}
+    </span>
+  </div>
+  <div class="characteristicBlock">
+    <span class="characteristicIcon">
+      <img src="/assets/icons/stamina.svg" alt="Выносливость">
+    </span>
+    <md-progress-bar class="user-characteristic-progress-bar"
+                     [mode]="'determinate'"
+                     [value]="getPercent(characteristics?.stamina)">
+    </md-progress-bar>
+    <span class="user-characteristic-number">
+      {{characteristics?.stamina}}
+    </span>
+  </div>
+  <div class="characteristicBlock">
+    <span class="characteristicIcon">
+      <img src="/assets/icons/vitality.png" alt="Живучесть">
+    </span>
+    <md-progress-bar class="user-characteristic-progress-bar"
+                     [mode]="'determinate'"
+                     [value]="getPercent(characteristics?.vitality)">
+    </md-progress-bar>
+    <span class="user-characteristic-number">
+      {{characteristics?.vitality}}
+    </span>
+  </div>
+  <div class="characteristicBlock">
+    <span class="characteristicIcon">
+      <img src="/assets/icons/agility.svg" alt="Ловкость">
+    </span>
+    <md-progress-bar class="user-characteristic-progress-bar"
+                     [mode]="'determinate'"
+                     [value]="getPercent(characteristics?.agility)">
+    </md-progress-bar>
+    <span class="user-characteristic-number">
+      {{characteristics?.agility}}
+    </span>
+  </div>
+  <div class="characteristicBlock">
+    <span class="characteristicIcon">
+      <img src="/assets/icons/reaction.svg" alt="Реакция">
+    </span>
+    <md-progress-bar class="user-characteristic-progress-bar"
+                     [mode]="'determinate'"
+                     [value]="getPercent(characteristics?.reaction)">
+    </md-progress-bar>
+    <span class="user-characteristic-number">
+      {{characteristics?.reaction}}
+    </span>
+  </div>
+</md-card>

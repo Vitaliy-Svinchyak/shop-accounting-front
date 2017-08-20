@@ -1,0 +1,6 @@
+<md-card class="user-inventory">
+  <ng-template [ngIf]="inventoryItems">
+    <app-inventory-item *ngFor="let item of inventoryItems" [inventoryItem]="item"></app-inventory-item>
+    <app-inventory-item *ngFor="let block of getEmptyBlocks()"></app-inventory-item>
+  </ng-template>
+</md-card>

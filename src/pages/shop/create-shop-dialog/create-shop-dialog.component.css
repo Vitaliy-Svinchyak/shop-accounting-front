@@ -1,0 +1,20 @@
+.center-button {
+  width: 100%;
+}
+
+.name-input {
+  width: 250px;
+}
+
+.shop-form {
+  width: 300px;
+}
+
+.shop-form md-input-container {
+  width: 100%;
+}
+
+.errors-container {
+  padding-top: 4px;
+  min-height: 40px;
+}

@@ -1,0 +1,25 @@
+.inventory-item {
+  border: 2px solid #736d5f;
+  flex-grow: 1;
+  background-color: #EAE6E5;
+  position: relative;
+}
+
+.inventory-item img {
+  max-width: 100%;
+  display: block;
+}
+
+.inventory-item .item-center-text {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+  text-align: center;
+  width: 100%;
+  background-color: #dadada;
+  padding: 4px 0px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}

@@ -1,0 +1,15 @@
+<form
+    class="shop-form"
+    [formGroup]="shopForm"
+    (submit)="createShop()">
+  <md-input-container>
+    <input mdInput placeholder="Название" formControlName="name" class="name-input">
+    <md-hint align="end">{{shopForm.controls?.name.value.length}} / 50</md-hint>
+  </md-input-container>
+  <div class="errors-container">
+    <md-error *ngFor="let error of formErrors.name">
+      {{error}}
+    </md-error>
+  </div>
+  <button md-button class="center-button" type="submit">Готово</button>
+</form>

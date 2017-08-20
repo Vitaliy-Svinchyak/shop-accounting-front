@@ -1,0 +1,16 @@
+.user-weapon {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.user-weapon app-inventory-item {
+  width: calc(33% - 16px);
+  padding: 8px;
+}
+
+@media (max-width: 992px) {
+  .user-weapon app-inventory-item {
+    width: calc(50% - 16px);
+  }
+}

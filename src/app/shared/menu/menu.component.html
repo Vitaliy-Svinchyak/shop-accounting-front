@@ -1,0 +1,16 @@
+<div class="main-menu" *ngIf="showMenu()">
+  <md-card class="menu-card">
+    <div class="main-menu-items-container">
+      <div class="main-menu-item">
+        Магазины:
+      </div>
+
+      <div class="main-menu-item">
+        <div class="flex-link" (click)="showAddShopModal()">
+          <md-icon>add_circle</md-icon>
+          <span>Добавить</span>
+        </div>
+      </div>
+    </div>
+  </md-card>
+</div>

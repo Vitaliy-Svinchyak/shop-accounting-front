@@ -1,0 +1,16 @@
+.user-inventory {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.user-inventory app-inventory-item {
+  width: calc(20% - 16px);
+  padding: 8px;
+}
+
+@media (max-width: 992px) {
+  .user-inventory app-inventory-item {
+    width: calc(50% - 16px);
+  }
+}

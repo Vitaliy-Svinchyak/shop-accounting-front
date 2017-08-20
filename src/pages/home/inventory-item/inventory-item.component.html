@@ -1,0 +1,5 @@
+<div class="inventory-item" [style.width]="width" (mouseover)="onHover()" (mouseleave)="onMouseLeave()">
+  <img [src]="image" alt="" *ngIf="!inventoryItem?.item?.entity?.image">
+  <img [src]="inventoryItem?.item?.entity?.image" alt="" *ngIf="inventoryItem?.item?.entity?.image">
+  <div class="item-center-text" [hidden]="!showAction" (click)="perfomAction()">{{getActionText()}}</div>
+</div>
