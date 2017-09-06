@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { MdDialog } from '@angular/material';
+import { MdDialog, MdDialogRef } from '@angular/material';
 import { CreateShopDialogComponent } from '../../../pages/shop/create-shop-dialog/create-shop-dialog.component';
+import { ShopPageService } from '../../../pages/shop/shop.page.service';
 
 @Component({
   selector: 'app-menu',
@@ -17,7 +18,17 @@ export class MenuComponent {
     '/quest'
   ];
 
-  public constructor(private location: Location, private route: ActivatedRoute, public dialog: MdDialog) {
+  public constructor(
+    private location: Location,
+    private route: ActivatedRoute,
+    private dialog: MdDialog,
+    private service: ShopPageService
+  ) {
+    this.loadShops();
+  }
+
+  public loadShops(): void {
+    this.service.get('').subscribe(console.log);
   }
 
   /**
@@ -36,6 +47,8 @@ export class MenuComponent {
   }
 
   public showAddShopModal(): void {
-    this.dialog.open(CreateShopDialogComponent);
+    const dialog: MdDialogRef<CreateShopDialogComponent> = this.dialog.open(CreateShopDialogComponent);
+
+    dialog.componentInstance.onSubmit.subscribe((r: boolean) => dialog.close());
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ShopPageService } from '../shop.page.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormComponent } from '../../../app/core/common/form.component';
@@ -11,6 +11,7 @@ import { FormComponent } from '../../../app/core/common/form.component';
 export class CreateShopDialogComponent extends FormComponent {
   public shopForm: FormGroup;
   public name: string = '';
+  @Output() public onSubmit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   protected formErrors: any = {
     name: [],
@@ -49,7 +50,11 @@ export class CreateShopDialogComponent extends FormComponent {
   public createShop(): void {
     if (this.shopForm.valid) {
       this.service.create('', {name: this.shopForm.controls.name.value})
-        .subscribe(console.log);
+        .subscribe((r: any) => {
+          if (r.result) {
+            this.onSubmit.emit(true);
+          }
+        });
     }
   }
 }

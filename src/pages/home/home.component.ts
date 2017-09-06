@@ -28,10 +28,10 @@ export class HomeComponent extends AbstractPage implements OnInit {
    * @inheritDoc
    */
   public ngOnInit(): void {
-    this.homePageService.getIndex()
-      .subscribe((user: User | UnexpectedResponse) => {
-        this.checkResponse(<UnexpectedResponse>user);
-        this.user = <User>user;
-      });
+    // this.homePageService.getIndex()
+    //   .subscribe((user: User | UnexpectedResponse) => {
+    //     this.checkResponse(<UnexpectedResponse>user);
+    //     this.user = <User>user;
+    //   });
   }
 }

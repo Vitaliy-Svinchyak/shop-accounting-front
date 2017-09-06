@@ -238,8 +238,8 @@ export class AuthComponent implements OnInit {
     const errorsParser: any = this.parseBackendErrors.bind(this);
     this.userService.authUser(user)
       .subscribe(
-        (authedUser: User) => {
-          this.authService.rememberUser(authedUser);
+        (result: any) => {
+          this.authService.rememberUser(result.result);
           this.checkIsAuthed();
         },
         errorsParser
