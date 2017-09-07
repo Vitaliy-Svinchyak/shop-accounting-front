@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { CreateShopDialogComponent } from '../../../pages/shop/create-shop-dialog/create-shop-dialog.component';
 import { ShopPageService } from '../../../pages/shop/shop.page.service';
+import { Shop } from '../../../models/shop/shop.model';
 
 @Component({
   selector: 'app-menu',
@@ -17,10 +17,10 @@ export class MenuComponent {
     '/auth',
     '/quest'
   ];
+  private shops: Shop[] = [];
 
   public constructor(
     private location: Location,
-    private route: ActivatedRoute,
     private dialog: MdDialog,
     private service: ShopPageService
   ) {
@@ -28,7 +28,10 @@ export class MenuComponent {
   }
 
   public loadShops(): void {
-    this.service.get('').subscribe(console.log);
+    this.service.getShops().subscribe(
+      (r: Shop[]) => {
+        this.shops = r;
+      });
   }
 
   /**

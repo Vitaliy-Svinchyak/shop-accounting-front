@@ -6,6 +6,7 @@ import { CreateShopDialogComponent } from './create-shop-dialog/create-shop-dial
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShopPageService } from './shop.page.service';
+import { ShopPageComponent } from './shop-page/shop.page.component';
 
 @NgModule({
   imports: [
@@ -17,10 +18,12 @@ import { ShopPageService } from './shop.page.service';
     ReactiveFormsModule
   ],
   exports: [
-    CreateShopDialogComponent
+    CreateShopDialogComponent,
+    ShopPageComponent
   ],
   declarations: [
-    CreateShopDialogComponent
+    CreateShopDialogComponent,
+    ShopPageComponent
   ],
   bootstrap: [CreateShopDialogComponent],
   providers: [ShopPageService]
