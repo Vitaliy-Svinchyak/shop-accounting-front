@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShopPageService } from './shop.page.service';
 import { ShopPageComponent } from './shop-page/shop.page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ShopPageComponent } from './shop-page/shop.page.component';
     FlexLayoutModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     CreateShopDialogComponent,
@@ -25,8 +27,8 @@ import { ShopPageComponent } from './shop-page/shop.page.component';
     CreateShopDialogComponent,
     ShopPageComponent
   ],
+  providers: [ShopPageService],
   bootstrap: [CreateShopDialogComponent],
-  providers: [ShopPageService]
 })
 export class ShopPageModule {
 }

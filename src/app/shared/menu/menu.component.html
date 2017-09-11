@@ -4,7 +4,7 @@
       <div class="main-menu-item">
         Магазины:
       </div>
-      <div class="main-menu-item" *ngFor="let shop of shops">
+      <div class="main-menu-item shop-item" *ngFor="let shop of shops">
         <a [routerLink]="['/shop', shop.id]">
           <div class="flex-link">
             <span>{{shop.name}}</span>

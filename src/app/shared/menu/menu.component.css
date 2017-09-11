@@ -1,36 +1,43 @@
 .main-menu {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .main-menu md-card.menu-card {
-  padding: 4px !important;
+    padding: 4px !important;
+    padding-top: 8px !important;
 }
 
 .main-menu .main-menu-items-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .main-menu .main-menu-item {
-  padding: 4px;
+    padding: 4px;
 }
 
 .main-menu .main-menu-item img {
-  max-height: 14px;
+    max-height: 14px;
 }
 
 .main-menu .main-menu-item a {
-  color: #000;
-  text-decoration: none;
+    color: #000;
+    text-decoration: none;
 }
 
 .main-menu .flex-link {
-  display: flex;
-  cursor: pointer;
+    display: flex;
+    cursor: pointer;
 }
 
 .main-menu .flex-link span {
-  padding-left: 5px;
+    padding: 0 5px;
+}
+
+.shop-item {
+    background-color: rgba(211, 211, 211, 0.48);
+    border-radius: 4px;
+    margin-right: 4px;
 }

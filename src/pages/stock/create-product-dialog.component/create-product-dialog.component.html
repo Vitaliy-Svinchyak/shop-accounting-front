@@ -1,0 +1,61 @@
+<form
+    class="product-form"
+    [formGroup]="productForm"
+    (submit)="createProduct()">
+
+  <md-card-header>
+
+    <md-card-title>
+      <md-input-container>
+        <input mdInput placeholder="Название" formControlName="name">
+        <md-hint align="end">{{productForm.controls?.name.value.length}} / 255</md-hint>
+      </md-input-container>
+
+
+      <md-input-container>
+        <input mdInput placeholder="Фирма" formControlName="firm">
+        <md-hint align="end">{{productForm.controls?.firm.value.length}} / 255</md-hint>
+      </md-input-container>
+    </md-card-title>
+
+  </md-card-header>
+
+  <div class="two-columns-inputs">
+    <md-input-container>
+      <input mdInput placeholder="Цена покупки" formControlName="buyPrice" type="number">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput placeholder="Цена продажи" formControlName="sellPrice" type="number">
+    </md-input-container>
+  </div>
+
+  <hr>
+
+  <div formArrayName="sizes">
+    <div class="two-columns-inputs" *ngFor="let sizeGroup of productForm.controls.sizes.controls; let i=index"
+         [formGroupName]="i">
+      <md-input-container>
+        <input mdInput placeholder="Размер" formControlName="size" type="text">
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Количество" formControlName="count" type="number">
+      </md-input-container>
+    </div>
+  </div>
+
+  <button md-raised-button (click)="addSize()">Ещё размер</button>
+
+  <div class="errors-container">
+    <md-error *ngFor="let error of formErrors.name">
+      {{error}}
+    </md-error>
+    <md-error *ngFor="let error of formErrors.firm">
+      {{error}}
+    </md-error>
+  </div>
+  <md-card-actions>
+    <button md-raised-button class="center-button" type="submit" color="primary">Готово</button>
+  </md-card-actions>
+</form>

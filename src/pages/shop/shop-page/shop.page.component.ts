@@ -7,6 +7,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-shop-page',
   templateUrl: 'shop.page.component.html',
+  styleUrls: ['shop.page.component.css'],
 })
 export class ShopPageComponent extends FormComponent {
 
@@ -24,6 +25,9 @@ export class ShopPageComponent extends FormComponent {
   }
 
   protected loadStocks(params: Params): void {
-    this.service.getStocks(params.id).subscribe(console.log);
+    this.service.getStocks(params.id)
+      .subscribe((stocks: Stock[]) => {
+        this.stocks = stocks;
+      });
   }
 }

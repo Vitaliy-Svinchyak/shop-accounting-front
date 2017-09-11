@@ -18,7 +18,8 @@ import { ProjectMaterialModule } from './core/common/project-material.module';
 import 'hammerjs/hammer';
 import { AuthService } from '../services/auth/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ShopPageModule } from '../pages/shop/shop-page.module';
+import { ShopPageModule } from '../pages/shop/shop.page.module';
+import { StockPageModule } from '../pages/stock/stock.page.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ShopPageModule } from '../pages/shop/shop-page.module';
     SharedModule,
     CookieModule.forRoot(),
     BrowserAnimationsModule,
-    ShopPageModule
+    ShopPageModule,
+    StockPageModule
   ],
   providers: [
     OVERLAY_PROVIDERS,

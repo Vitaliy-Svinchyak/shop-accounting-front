@@ -1,0 +1,5 @@
+<md-card *ngFor="let stock of stocks" class="stock-card">
+  <a [routerLink]="['/stock', stock.id]" class="stock-link">
+    {{stock.name}}
+  </a>
+</md-card>

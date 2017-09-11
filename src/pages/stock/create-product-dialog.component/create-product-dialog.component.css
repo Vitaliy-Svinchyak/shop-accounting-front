@@ -1,0 +1,33 @@
+.center-button {
+    width: 100%;
+}
+
+.name-input {
+    width: 250px;
+}
+
+.shop-form {
+    width: 300px;
+}
+
+.product-form md-input-container {
+    flex-direction: column;
+    display: flex;
+    min-width: 300px;
+}
+
+.errors-container {
+    padding-top: 4px;
+    min-height: 40px;
+}
+
+.two-columns-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+
+.two-columns-inputs md-input-container {
+    min-width: 140px;
+    width: 140px;
+}
